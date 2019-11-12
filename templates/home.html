@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <div>
+     <img class="img_1" src="{{ url_for('static', filename = 'image/header.png') }}">
+  </div>
+  <div class="sections">
+    <div class="col-sm-12 h-100 ">
+      <div class="card-deck pt-5 pb-5 pl-3 pr-3">
+        <div class="card">
+          <img class="card-img-top h-100" src="{{ url_for('static', filename = 'image/bed.png') }}">
+          <a href="#" class="bt ">Bed Room</a>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top h-100" src="{{ url_for('static', filename = 'image/living.png') }}">
+          <a href="#" class="bt ">Living Room</a>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top h-100" src="{{ url_for('static', filename = 'image/kitchen.png') }}">
+          <a href="#" class="bt ">Kitchen</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<div class="pt-5">
+    {% include 'footer.html' %}
+</div>
+

@@ -1,0 +1,58 @@
+
+{% include 'header.html' %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#">Bed Room</a>
+          <a class="nav-item nav-link" href="#">Living Room</a>
+          <a class="nav-item nav-link" href="#">Kitchen</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="col-md-12 h-100 pt-3 pb-5 pl-5 pr-5">
+      <div class="card-deck pt-3 pb-5 pl-5 pr-5">
+          <div class="card ">
+            <img class="card-img-top h-100" src="{{ url_for('static', filename = 'image/bed.png') }}">
+            <div class="card-body">
+              <h3 class="card-title">Bed</h3>
+              <h6 class="card-title">15$</h6>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <img class="card-img-top h-100" src="{{ url_for('static', filename = 'image/sofa.jpg') }}">
+            <div class="card-body">
+              <h3 class="card-title">Sofa</h3>
+              <h6 class="card-title">50$</h6>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <img class="card-img-top h-100" src="{{ url_for('static', filename = 'image/bath.jpg') }}">
+            <div class="card-body">
+              <h3 class="card-title">BathRoom</h3>
+              <h6 class="card-title">40$</h6>
+            </div>
+          </div>
+
+        <div class="card">
+            <img class="card-img-top h-100" src="{{ url_for('static', filename = 'image/chair.jpg') }}">
+            <div class="card-body">
+              <h3 class="card-title">Dinning Table</h3>
+              <h6 class="card-title">100$</h6>
+            </div>
+          </div>
+
+      </div>
+    </div>
+<div class="pt-5">
+    {% include 'footer.html' %}
+</div>
+
+
+

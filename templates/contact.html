@@ -1,0 +1,38 @@
+{% include 'header.html' %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<hr>
+<h1 id="contact">
+    <img src="{{ url_for('static', filename = 'image/contcat.png') }}" width="40" height="40" class="d-inline-block align-top" alt="">
+          Contact Us
+</h1>
+<hr>
+
+<form class="pr-5 pl-5 pt-5">
+    <div class="form-group row ">
+        <label class="col-sm-2 col-form-label">Sender name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" required>
+        </div>
+      </div>
+
+    <div class="form-group">
+        <label >Message</label>
+        <textarea class="form-control" rows="3" required></textarea>
+      </div>
+
+    <div class="col-sm-10">
+      <button type="submit" name="send" class="btn btn-primary">Send</button>
+    </div>
+    </form>
+
+<div class="pt-5">
+    {% include 'footer.html' %}
+</div>
+

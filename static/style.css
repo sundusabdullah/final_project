@@ -1,0 +1,66 @@
+
+.nav-link  {
+    color:black;
+    font-size: 20px;
+}
+
+.img_1{
+    width: 100%;
+    z-index: 0;
+}
+
+.bt{
+    background-color:#E1CE6F;
+    border: none;
+    color:black;
+    padding: 15px 32px;
+    text-align: center;
+
+}
+
+.card{
+    border: none;
+    min-height: 50px;
+}
+
+.card-deck{
+    border: none;
+    margin-top: 30px;
+
+}
+
+.sections{
+     margin-top: 50px;
+     width: 100%;
+     z-index: 0;
+}
+
+#text {
+    text-align: center;
+
+
+}
+#about{
+    margin-top: 40px;
+    text-align: center;
+}
+
+#contact{
+    margin-top: 40px;
+    text-align: center;
+}
+
+#footer{
+      background-color: #E6E6E6;
+      display: flex;
+      height: 2.5rem;
+      text-align:center;
+
+}
+.footer_text{
+     font-size:15px;
+     text-align: center;
+
+}
+
+
