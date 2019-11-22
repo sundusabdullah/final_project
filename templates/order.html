@@ -1,102 +1,96 @@
 
 {% include 'header.html' %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
 <hr>
+
+
 <div class="row">
     <div class="col-md-6 offset-sm-3 text-center">
-        <form class="pt-3 pr-5 pl-5">
-        <div class="form-group pt-5">
-            <label >Product Name</label>
-            <select class="form-control" >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-        </div>
-        <div class="form-group pt-3">
-            <label >Product Type</label>
-            <select class="form-control" >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-        </div>
+        <form class="pt-3 pr-5 pl-5" method="POST" action="">
 
-        <div class="form-group pt-3">
-            <label >Quantity</label>
-            <select class="form-control" >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-        </div>
-            <button type="submit">Insert</button>
-    </form>
+            <div class="form-group pt-3">
+            <label >Product Type</label>
+
+                <select name="prod_type" name="prod_type" class="form-control" required>
+                    <option>Select one section</option>
+                    <option value="Living room" >Living room</option>
+                    <option value="Bed Room" >Bed Room</option>
+                    <option value="Kitchen" >Kitchen</option>
+                </select>
+
+
+
+            <div class="pt-3">
+                <button  type="submit" nmae="select">Select</button>
+            </div>
+
+            </div>
+            <div class="form-group pt-5">
+                <label >Product Name</label>
+                <select name="prod_name" class="form-control">
+                    {% for row in result %}
+                  <option value="{{ row[0] }}" >{{ row[0] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group pt-3">
+                <label >Quantity</label>
+                <select name="number" class="form-control" >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+            </div>
+            <button type="submit" nmae="insert">Insert Product</button>
+        </form>
     </div>
 </div>
 
-<!--<div class="container pt-3">
-    <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Product Name</th>
-            <th>Product Type</th>
-              <th>Price</th>
-            <th>Quantity</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-              <td>C</td>
-          </tr>
-          <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-              <td>mary@example.com</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-              <td>july@example.com</td>
-          </tr>
-        </tbody>
-    </table>
 
-</div>-->
-
+<!--Show Orders -->
 <div class="container pt-3">
     <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Total Price</th>
-            <th>With Tax</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
           </tr>
         </thead>
-         <tbody>
+        <tbody>
           <tr>
-            <td>A</td>
-            <td>B</td>
+              {% for row in order %}
+            <td>{{row[0]}}</td>
+            <td>{{row[2]}}</td>
+              <td>{{row[1]}}</td>
           </tr>
-         </tbody>
+          {% endfor %}
+        </tbody>
     </table>
-        <button type="submit">Send Order</button>
+        <table class="table table-bordered">
+            <thead>
+          <tr>
+              <th>Total Price</th>
+              <th>Total with Tax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{total}}</td>
+            <td>{{Total_tax}}</td>
+          </tr>
 
+
+        </tbody>
+        </table>
 </div>
 
-
-
+<div class="container pt-3">
+    <button type="submit" id="show_message" value="Your order sent, Thank you for shopping">Send Order</button>
+</div>
 
 <div class="pt-5">
     {% include 'footer.html' %}
